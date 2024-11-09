@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .top-bar {
+    background-color: black;         
+    color: white;                    
+    display: flex;                   
+    align-items: center;             
+    justify-content: center;         
+    height: 30px;                    
+    font-size: 16px;
+    overflow: hidden;              
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  #dynamic-text {
+    font-family: 'Black', Montserrat;  /* Apply the custom font */
+    font-size: 15px;  /* Adjust the font size as needed */
+    font-weight: bold; /* Optional: make the text bold */
+    color: white;  /* Optional: set text color */
+    text-align: center; /* Center-align the text */
+    animation: fadeInOut 3s ease-in-out infinite;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white; /* Black background color */
+    padding: 10px 20px;
+    margin-top: 0px;
+  }
+
+  .logo {
+    position: absolute;         /* Positions the logo independently */
+    right: 1220px;                 /* Moves logo to the left side */
+    top: 7%;                   /* Vertically centers the logo */
+    transform: translateY(-50%);
+  }
+
+  .logo img {
+    height: 300px;               /* Adjust logo size */
+    width: auto;                /* Maintains aspect ratio */
+  }
+
+ .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex: 1; /* Allows nav-links to take up remaining space */
+    justify-content: center; /* Centers the links */
+  }
+  
+  .nav-links a {
+    color: black; /* White text color for links */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 18px;
+  }
+  
+  .nav-links a:hover {
+    color: gray;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+}
+.video-section {
+  position: relative; /* Ensures that child elements can be positioned over the video */
+  width: 100%;
+  margin-top: 0; /* No space above the video */
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (height/width = 9/16 = 0.5625 -> 56.25%) */
+}
+video {
+  position: absolute; /* Absolute positioning within the container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Makes the video take up the entire width of the container */
+  height: 100%; /* Ensures it takes up the full height while keeping the aspect ratio */
+  object-fit: cover; /* Ensures the video covers the area without distorting */
+}
+.overlay-text {
+  position: absolute; /* Position the text over the video */
+  top: 50%; /* Vertically centers the text */
+  left: 50%; /* Horizontally centers the text */
+  transform: translate(-50%, -50%); /* Perfectly centers the text */
+  font-size: 80px; /* Adjust font size */
+  font-family: 'black', montserrat; /* Choose your preferred font */
+  color: white; /* White text color */
+  text-align: center; /* Centers the text */
+  font-weight: bold; /* Makes the text bold */
+  z-index: 10; /* Ensures the text appears above the video */
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.overlay-text:hover {
+  color: transparent; /* Makes the text color transparent */
+  -webkit-text-stroke: 2px white; /* Adds a solid black stroke around the text */
+  color: transparent;
+  text-shadow: none; /* Removes any glow or shadow */
+}
